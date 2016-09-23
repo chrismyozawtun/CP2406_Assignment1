@@ -84,7 +84,7 @@ public class Play {
         gos = 0;
 
         //build hands of eight cards for each player
-        switch(numberOfPlayers{
+        switch(numberOfPlayers){
             case 3:
                 //enter first 3 player names
                 enterFirstThreePlayersNames();
@@ -132,7 +132,7 @@ public class Play {
 
                                     for(int i = discardedCards.size() -1;
                                             i>0;
-                                            --1;
+                                            --1);
                                     {
                                         shuffledDeck.add(discardedCards.get(i));
                                         discardedCards.remove(i);

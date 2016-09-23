@@ -79,7 +79,7 @@ public class Deck {
                 "igneous metamorphic", 1.5, 4.7, "1 perfect", "trace", "high");
         cards[35] = new MineralCard("The Mineralogist", "Cleavage");
         cards[36] = new MineralCard("Gold", "Au", "native element", "isometric",
-                "metamorphic sedimentary", 3.0, 19.3, "none", "ultratrace", "I'm rich!"));
+                "metamorphic sedimentary", 3.0, 19.3, "none", "ultratrace", "I'm rich!");
         cards[37] = new MineralCard("Diamond", "C", "native element", "isometric",
                 "igneous metamorphic sedimentary", 10.0, 3.5, "4 perfect", "ultratrace", "I'm rich!");
         cards[38] = new MineralCard("Graphite", "C", "native element", "hexagonal",
