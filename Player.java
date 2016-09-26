@@ -3,9 +3,14 @@ import java.util.Scanner;
 
 /**
  * Created by Mick MBP on 23-Sep-16.
+
  */
 
-public class Earthling {
+public class Player {
+    private String name;
+    private ArrayList<Integer> handCard = new ArrayList<>();
+    private boolean eliminated = false;
+    ArrayList nameList = new ArrayList();
     private Deck myCards = new Deck();
     private Boolean isDealer;
     private Boolean hasPassed = false;
@@ -16,16 +21,26 @@ public class Earthling {
 
     String[] econonmicValue = new String[]{"trivial","low","moderate","high","very high","I'm rich!"};
 
-    public Earthling(){
+    public Player(){
         isDealer = false;
+        this.eliminated = false;
     }
-    public Earthling(Boolean dealer){
+    public Player(Boolean dealer){
         isDealer = dealer;
     }
 
     public Deck takeCard(Deck cards, int index){
         myCards.addCard(cards.takeCardAtIndex(index));
         return cards;
+    }
+
+//set player name
+    public void setName(String name){
+        this.name = name;
+    }
+//get player name
+    public String getName(){
+        return this.name;
     }
 
 //start playing
@@ -117,14 +132,14 @@ public class Earthling {
         SupertrumpsCard previouslyPlayedCard = playedCards.getCardAtIndex(playedCards.length()-1);
 
         if (getHasPassed() == true){
-            System.out.println("You have passed - your turn is being skipped. Press enter to continue.");
+            System.out.println("You have passed - your turn is being skipped. Press enter to continue.\n");
             inputDevice.nextLine();
             return new Object[]{playedCards, deck, category};
 
         }
 
         else
-            System.out.println("It's your turn. Pick a card to play: ");
+            System.out.println("\nIt's your turn. Pick a card to play: \n");
 
         displayCardList();
 
@@ -141,7 +156,7 @@ public class Earthling {
         }
 
         if (hasPlayableCard == true){
-            System.out.println("Your turn...");
+            System.out.println("\nYour turn...please choose a card>>>\n");
         }
         else {
             System.out.println("You don't have any playable cards, your turn is being skipped. Press enter to continue.");
@@ -345,7 +360,7 @@ public class Earthling {
                     currentPlayer.takeCard(deck,0);
                 }
             }else{
-                Earthling currentPlayer = (Earthling)playerList.get(i);
+                Player currentPlayer = (Player)playerList.get(i);
                 for (int j = 0; j < 8; j++){
                     currentPlayer.takeCard(deck,0);
                 }
@@ -362,7 +377,7 @@ public class Earthling {
     }
 
     public String toString(){
-        return "It is " + isDealer.toString() + "You are dealer and you have "
+        return "It is " + isDealer.toString() + " you are the dealer and you have "
                 + myCards.length() + " cards";
     }
 }

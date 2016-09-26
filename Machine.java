@@ -39,7 +39,7 @@ public class Machine {
                     currentPlayer.takeCard(deck,0);
                 }
             }else{
-                Earthling currentPlayer = (Earthling)playerList.get(i);
+                Player currentPlayer = (Player)playerList.get(i);
                 for (int j = 0; j < 8; j++){
                     currentPlayer.takeCard(deck,0);
                 }
@@ -69,7 +69,7 @@ public class Machine {
     }
 
     private void stateCard(String category, SupertrumpsCard card){
-        System.out.print("Played card is " + card.getTitle() + " ");
+        System.out.print("\nPlayed card is " + card.getTitle() + " ");
         if(category.equals("Economic value")){
             System.out.println(" with " + card.getEconomicValue()+ " economic value." );
         }else if(category.equals("Crustal abundance")){
@@ -205,7 +205,7 @@ public class Machine {
     }
 
     public String toString(){
-        return "It is " + isDealer.toString() + "the machine is the dealer and has " + myCards.length() + " cards";
+        return "It is " + isDealer.toString() + " the machine is the dealer and has " + myCards.length() + " cards";
 
     }
 }

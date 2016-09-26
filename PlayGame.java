@@ -12,6 +12,7 @@ import java.util.*;
 
 //Offer game play & Select size of game
 public class PlayGame {
+
     public static void main(String[] args) {
         final String MENU = "Would you like to play a game? \ny or n\n>>> ";
         Scanner inputDevice = new Scanner(System.in);
@@ -29,6 +30,7 @@ public class PlayGame {
             }
             System.out.print(MENU);
             userInput = inputDevice.next();
+
         }
     }
 
@@ -46,6 +48,7 @@ public class PlayGame {
         }
 
         return playingCardList;
+
     }
 
 //Choose dealer at random - can be machine or earthling
@@ -73,6 +76,7 @@ public class PlayGame {
         ArrayList<Object>playerList = new ArrayList<>();
 
 
+
         //Add the dealer (random)
         int dealerType = randomGenerator.nextInt(2);
         Boolean humanPlayerCreated = false;
@@ -81,17 +85,18 @@ public class PlayGame {
                 playerList.add(new Machine(true));
                 break;
             case 1:
-                playerList.add(new Earthling(true));
+                playerList.add(new Player(true));
                 humanPlayerCreated = true;
                 break;
         }
+
 //Add other players
         int humanPlayerPosition = randomGenerator.nextInt(players-1);
         for(int i = 0; i < players - 1; i++){
             if(i != humanPlayerPosition || humanPlayerCreated == true){
                 playerList.add(new Machine());
             }else{
-                playerList.add(new Earthling());
+                playerList.add(new Player());
                 humanPlayerCreated = true;
             }
         }
@@ -104,7 +109,7 @@ public class PlayGame {
             playerList = (ArrayList<Object>) returned[0];
             playingCards = (Deck) returned[1];
         }else{
-            Earthling currentPlayer = (Earthling)playerList.get(0);
+            Player currentPlayer = (Player)playerList.get(0);
             Object[] returned = currentPlayer.dealCards(playerList,playingCards);
             playerList = (ArrayList<Object>) returned[0];
             playingCards = (Deck) returned[1];
@@ -130,7 +135,7 @@ public class PlayGame {
 
             playerList.set(playerPosition, initialPlayer);
         }else{
-            Earthling initialPlayer = (Earthling)playerList.get(playerPosition);
+            Player initialPlayer = (Player)playerList.get(playerPosition);
 
             Object[] returned = initialPlayer.takeInitialTurn(playedCards);
             playedCards = (Deck)returned[0];
@@ -142,18 +147,20 @@ public class PlayGame {
         playerPosition += 1;
 
 //check to continue game
-        while (EndGame == false){
+        while (!EndGame){
             if(playerList.get(playerPosition) instanceof Machine){
                 Machine currentPlayer = (Machine)playerList.get(playerPosition);
 
                 Object[] returned = currentPlayer.takeTurn(playedCards, playingCards, category);
-            }else{
-                Earthling currentPlayer = (Earthling)playerList.get(playerPosition);
+                playingCards = (Deck)returned[0];
 
+            }else{
+                Player currentPlayer = (Player)playerList.get(playerPosition);
                 Object[] returned = currentPlayer.takeTurn(playedCards,playingCards,category);
                 playedCards = (Deck)returned[0];
                 playingCards = (Deck)returned[1];
                 category = (String)returned[2];
+
             }
 
             if (playerPosition == playerList.size() -1){
