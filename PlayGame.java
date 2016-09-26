@@ -36,7 +36,7 @@ public class PlayGame {
 
     //access plist file and shuffle deck
     public static Deck getPlayingCards(){
-        ArrayList cardList = loadCards("/Users/admin/IdeaProjects/CP2406_Ass1/MstCards_151021.plist");
+        ArrayList cardList = loadCards("/Users/admin/IdeaProjects/CP2406_Assignment1/MstCards_151021.plist");
         Deck playingCardList = new Deck(cardList);
 
         for(int i = playingCardList.length() - 1; i > 0; i--){

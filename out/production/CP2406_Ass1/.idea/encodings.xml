@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Deck.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/Machine.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/MstCards_151021.plist" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/PlayGame.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/Player.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/SupertrumpsCard.java" charset="ISO-8859-1" />
+  </component>
+</project>
