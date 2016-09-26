@@ -1,5 +1,3 @@
-import com.sun.codemodel.internal.JOp;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -517,27 +515,27 @@ public class Play {
                 stringBuilder.append("Your ");
                 stringBuilder.append(activeCategory);
                 stringBuilder.append("value needs to be > ");
-                stringBuilder.append(((MineralCard) activeCard).getHardness());
+                stringBuilder.append(((SupertrumpsCard) activeCard).getHardness());
             } else if (activeCategory.equals("Specific Gravity")) {
                 stringBuilder.append("Your ");
                 stringBuilder.append(activeCategory);
                 stringBuilder.append("value needs to be > ");
-                stringBuilder.append(((MineralCard) activeCard).getSpecificGravity());
+                stringBuilder.append(((SupertrumpsCard) activeCard).getSpecificGravity());
             } else if (activeCategory.equals("Cleavage")) {
                 stringBuilder.append("Your ");
                 stringBuilder.append(activeCategory);
                 stringBuilder.append("value needs to be > ");
-                stringBuilder.append(((MineralCard) activeCard).getCleavage());
+                stringBuilder.append(((SupertrumpsCard) activeCard).getCleavage());
             } else if (activeCategory.equals("Crustal Abundance")) {
                 stringBuilder.append("Your ");
                 stringBuilder.append(activeCategory);
                 stringBuilder.append("value needs to be > ");
-                stringBuilder.append(((MineralCard) activeCard).getCrustalAbundance());
+                stringBuilder.append(((SupertrumpsCard) activeCard).getCrustalAbundance());
             } else if (activeCategory.equals("Economic Value")) {
                 stringBuilder.append("Your ");
                 stringBuilder.append(activeCategory);
                 stringBuilder.append("value needs to be > ");
-                stringBuilder.append(((MineralCard) activeCard).getEconomicValue());
+                stringBuilder.append(((SupertrumpsCard) activeCard).getEconomicValue());
             }
             stringBuilder.append("\n");
         }
@@ -551,35 +549,35 @@ public class Play {
             }
 
             else if(checkCategory.equals("Hardness")) {
-                if (((MineralCard)card).getHardness() > ((MineralCard)activeCard).getHardness()) {
+                if (((SupertrumpsCard)card).getHardness() > ((SupertrumpsCard)activeCard).getHardness()) {
                     compare = 1;
                 }
             }
             else if(activeCategory.equals("Specific Gravity")) {
-                if (((MineralCard)card).getSpecificGravity() > ((MineralCard)activeCard).getSpecificGravity() || card.getName().equals("Magnetite")){
+                if (((SupertrumpsCard)card).getSpecificGravity() > ((SupertrumpsCard)activeCard).getSpecificGravity() || card.getName().equals("Magnetite")){
                     compare = 1;
                 }
             }
             else if(activeCategory.equals("Cleavage")) {
 
-                int index1 = Arrays.asList(cleavageHeirarchy).indexOf(((MineralCard)card.getCleavage());
-                int index2 = Arrays.asList(cleavageHeirarchy).indexOf(((MineralCard)activeCard.getCleavage());
+                int index1 = Arrays.asList(cleavageHeirarchy).indexOf(((SupertrumpsCard)card.getCleavage());
+                int index2 = Arrays.asList(cleavageHeirarchy).indexOf(((SupertrumpsCard)activeCard.getCleavage());
 
                 if(index1>index2){
                     compare = 1;
                 }
             }
             else if(activeCategory.equals("Crustal Abundance")){
-                int index1 = Arrays.asList(crustalAbundanceHeirarchy).indexOf(((MineralCard)card.getCrustalAbundance());
-                int index2 = Arrays.asList(crustalAbundanceHeirarchy).indexOf(((MineralCard)activeCard.getCrustalAbundance());
+                int index1 = Arrays.asList(crustalAbundanceHeirarchy).indexOf(((SupertrumpsCard)card.getCrustalAbundance());
+                int index2 = Arrays.asList(crustalAbundanceHeirarchy).indexOf(((SupertrumpsCard)activeCard.getCrustalAbundance());
 
                 if(index1>index2){
                     compare = 1;
                 }
             }
             else if(activeCategory.equals("Economic Value")){
-                int index1 = Arrays.asList(economicValueHeirarchy).indexOf(((MineralCard)card.getEconomicValue());
-                int index2 = Arrays.asList(economicValueHeirarchy).indexOf(((MineralCard)activeCard.getEconomicValue());
+                int index1 = Arrays.asList(economicValueHeirarchy).indexOf(((SupertrumpsCard)card.getEconomicValue());
+                int index2 = Arrays.asList(economicValueHeirarchy).indexOf(((SupertrumpsCard)activeCard.getEconomicValue());
 
                 if(index1>index2){
                     compare = 1;

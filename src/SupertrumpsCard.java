@@ -2,7 +2,7 @@
  * Created by Mick White #12862610 on 12/09/16.
  */
 //inherit title from card with other info
-public class MineralCard extends Card {
+public class SupertrumpsCard extends Card {
 
     private String formula;
     private String classification;
@@ -15,10 +15,10 @@ public class MineralCard extends Card {
     private String economicValue;
 
     //this constructs 10 attributes of each card
-    public MineralCard(String name, String formula, String classification,
-                       String crystalSystem, String occurrence, Double hardness,
-                       Double specificGravity, String cleavage,
-                       String crustalAbundance, String economicValue) {
+    public SupertrumpsCard(String name, String formula, String classification,
+                           String crystalSystem, String occurrence, Double hardness,
+                           Double specificGravity, String cleavage,
+                           String crustalAbundance, String economicValue) {
 
         super(name);
         this.formula = formula;

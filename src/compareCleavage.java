@@ -15,32 +15,32 @@ public class compareCleavage {
         deck = new Deck();
         int number = getNumber();
 
-        int index1 = Arrays.asList(cleavageHeirarchy).indexOf(((MineralCard) deck.cards[number]).getCleavage());
-        int index2 = Arrays.asList(cleavageHeirarchy).indexOf(((MineralCard) deck.cards[number + 1]).getCleavage());
+        int index1 = Arrays.asList(cleavageHeirarchy).indexOf(((SupertrumpsCard) deck.cards[number]).getCleavage());
+        int index2 = Arrays.asList(cleavageHeirarchy).indexOf(((SupertrumpsCard) deck.cards[number + 1]).getCleavage());
 
 // if locations of value in crustal abundance array are equal
         if (index1 == index2){
 
 
             System.out.println((deck.cards[number]).getName() + " has the same value \"" +
-                    ((MineralCard) deck.cards[number]).getCleavage() + "\" of Cleavage as " + (deck.cards[number + 1]).getName() +
-                    " whose value is \"" + ((MineralCard) deck.cards[number + 1]).getCleavage() + "\"");
+                    ((SupertrumpsCard) deck.cards[number]).getCleavage() + "\" of Cleavage as " + (deck.cards[number + 1]).getName() +
+                    " whose value is \"" + ((SupertrumpsCard) deck.cards[number + 1]).getCleavage() + "\"");
 
 //if locations of value in crustal abundance of first card > than second card
         } else if (index1 > index2){
 
 
             System.out.println(deck.cards[number].getName() + " has a greater value \"" +
-                    ((MineralCard) deck.cards[number]).getCleavage() + "\" of Cleavage than " + deck.cards[number + 1].getName() +
-                    " whose value is \"" + ((MineralCard) deck.cards[number + 1]).getCleavage() + "\"");
+                    ((SupertrumpsCard) deck.cards[number]).getCleavage() + "\" of Cleavage than " + deck.cards[number + 1].getName() +
+                    " whose value is \"" + ((SupertrumpsCard) deck.cards[number + 1]).getCleavage() + "\"");
 
 //if locations of value in crustal abundance of second card > than first card
         } else {
 
 
             System.out.println((deck.cards[number + 1]).getName() + " has a greater value \"" +
-                    ((MineralCard) deck.cards[number + 1]).getCleavage() + "\" of Cleavage than " + deck.cards[number].getName() +
-                    " whose value is \"" + ((MineralCard) deck.cards[number]).getCleavage() + "\"");
+                    ((SupertrumpsCard) deck.cards[number + 1]).getCleavage() + "\" of Cleavage than " + deck.cards[number].getName() +
+                    " whose value is \"" + ((SupertrumpsCard) deck.cards[number]).getCleavage() + "\"");
         }
     }
     //select 2 adjacent mineral cards in the deck, skip trump cards
